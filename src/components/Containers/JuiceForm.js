@@ -5,20 +5,20 @@ export default class JuiceForm extends Component {
         creator:"",
         name:"",
         imageURL: "",
-        ingredients: "",
+        ing: "",
         directions: ""
     }
 
     handleSubmit= event => {
         event.preventDefault()
-        this.props.addJuice(this.state)
         this.setState({
-        creator:"",
-        name:"",
-        imageURL: "",
-        ingredients: "",
-        directions: ""
+            creator:"",
+            name:"",
+            imageURL: "",
+            ing: "",
+            directions: ""
         })
+        this.props.addJuice(this.state)
     }
 
     handleChange = event => {
@@ -29,7 +29,7 @@ export default class JuiceForm extends Component {
     }
 
     render(){
-        const{ creator, name, ingredients, imageURL, directions } = this.state
+        const{ creator, name, ing, imageURL, directions } = this.state
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -47,8 +47,8 @@ export default class JuiceForm extends Component {
                     />
                     <input
                         placeholder="Ingredients"
-                        name="ingredients"
-                        value={ingredients}
+                        name="ing"
+                        value={ing}
                         onChange={this.handleChange}
                     />
                     <input

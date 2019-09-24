@@ -18,7 +18,7 @@ export default class App extends Component {
   }
 
   addJuice = (juice) => {
-    const newJuice = {id:Date.now(), ...juice}
+    const newJuice = {userId: 1, ...juice}
     this.setState({
       juices: [newJuice, ...this.state.juices]
     })
