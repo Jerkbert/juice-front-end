@@ -2,18 +2,22 @@ import React, { Component } from 'react'
 
 export default class JuiceForm extends Component {
     state={
-        user:"",
+        creator:"",
         name:"",
-        ingredients:[]
+        imageURL: "",
+        ingredients: "",
+        directions: ""
     }
 
     handleSubmit= event => {
-        event.prevent.Default()
+        event.preventDefault()
         this.props.addJuice(this.state)
         this.setState({
-            user:"",
-            name:"",
-            ingredients:[]
+        creator:"",
+        name:"",
+        imageURL: "",
+        ingredients: "",
+        directions: ""
         })
     }
 
@@ -25,14 +29,14 @@ export default class JuiceForm extends Component {
     }
 
     render(){
-        const{ user, name, ingredients } = this.state
+        const{ creator, name, ingredients, imageURL, directions } = this.state
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <input
-                        placeholder="User"
-                        name="user"
-                        value={user}
+                        placeholder="Created By"
+                        name="creator"
+                        value={creator}
                         onChange={this.handleChange}
                     />
                     <input
@@ -45,6 +49,18 @@ export default class JuiceForm extends Component {
                         placeholder="Ingredients"
                         name="ingredients"
                         value={ingredients}
+                        onChange={this.handleChange}
+                    />
+                    <input
+                        placeholder="directions"
+                        name="directions"
+                        value={directions}
+                        onChange={this.handleChange}
+                    />
+                    <input
+                        placeholder="image"
+                        name="imageURL"
+                        value={imageURL}
                         onChange={this.handleChange}
                     />
                     <button>Save Juice!</button>

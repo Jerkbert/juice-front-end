@@ -1,17 +1,19 @@
 import React from 'react'
+import './Cards.css'
 
 export default function Card({juice, setActiveCard, activeCard}) {
-    const { id, name, imageURL } = juice
+    const { ingredients, directions, name, imageURL, creator } = juice
     return (
         <div className={activeCard ? "active-card" : "card" } onClick={ () => activeCard ? null : setActiveCard(juice)}>
-            <h2>{name}</h2>
+            <h1>{name}</h1>
             {activeCard
                 ? (
-                    <section>
-                        
+                    <section className='details'>
                         <img src={imageURL} alt={name}></img>
-                        <h3>stuff</h3>
-                        <h3>Created By: Somebody</h3>
+                        <h2>Ingredients: {ingredients}</h2>
+                        <h2>Directions: {directions}</h2>
+                        <h3>Created By: {creator}</h3>
+                        
                     </section>
                 )
                 : null

@@ -17,17 +17,28 @@ export default class App extends Component {
     }))
   }
 
-  addJuice= (juice) => {
+  addJuice = (juice) => {
     const newJuice = {id:Date.now(), ...juice}
     this.setState({
       juices: [newJuice, ...this.state.juices]
     })
+    fetch('http://localhost:3000/juices', {
+      method: 'POST',
+      body: JSON.stringify(newJuice),
+      headers: {
+        'Content-Type':'application/json'
+      }
+    })
+    console.log(newJuice)
   }
 
   render() {
     return (
       <div>
+      <nav>
         <JuiceForm addJuice={this.addJuice} />
+
+      </nav>
         {this.state.juices.length > 0 ? <Container juices={this.state.juices}/> : null}
       </div>
     )

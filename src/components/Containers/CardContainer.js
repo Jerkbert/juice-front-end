@@ -4,10 +4,10 @@ import Card from '../Cards/Card'
 export default function CardContainer({juices, setActiveCard}) {
 
     const juiceCards = juices.map( juice => (
-        <Card juice={juice} setActiveCard={setActiveCard}/>
+        <Card key={juice.id} juice={juice} setActiveCard={setActiveCard}/>
     ))
     return (
-        <div>
+        <div className="card-container">
             {juiceCards}
         </div>
     )

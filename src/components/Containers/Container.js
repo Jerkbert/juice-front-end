@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import CardContainer from './CardContainer'
 import Card from '../Cards/Card'
+import './Container.css'
 
 
 export default function Container({juices}) {

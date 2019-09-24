@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-flow: row wrap
+}
+
+.card-container{
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 10px;
+    row-gap: 15px;
+}
