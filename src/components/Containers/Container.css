@@ -1,12 +1,75 @@
 .container {
     display: flex;
-    flex-flow: row wrap
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+nav {
+   display: flex;
+   flex-flow: row wrap;
+   padding: 25px;
+   justify-content: center;
+   background-color: hsla(49, 83%, 50%, 0.9)
+}
+
+form input {
+    margin-left: 1rem;
+    font-size: 20px;
+    border: 2px solid rgb(0, 186, 192);
+    border-radius: 5px;
+}
+
+form button {
+    margin-left: 1rem;
+    background-color: rgba(228, 58, 109, 0.904);
+    border-radius: 5px;
+    width: 200px;
+    cursor: pointer;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    color: white;
+    box-shadow: 0 10px 10px -6px grey;
+    font-style: bold;
+}
+
+button:hover {
+    background-color: darkmagenta;
+}
+
+#feature {
+    display: flex;
+    flex-flow: row wrap;
+    background-image: url("https://i.pinimg.com/originals/36/9c/b4/369cb4e49818cb7dd788a2c92ed06566.jpg");
+    background-size: 100%;
+    position: center;
+    padding-bottom: 100px; 
+    padding-top: 100px;
 }
 
 .card-container{
     display: grid;
-    width: 70%;
-    grid-template-columns: repeat(3, auto);
+    width: 30%;
+    grid-template-columns: repeat(1, auto);
     column-gap: 10px;
     row-gap: 15px;
+    padding-left: 100px;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    background-color: darkmagenta;
+    border: 1px solid darkmagenta;
+}
+
+
+.active-card{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    background-color: darkmagenta;
+    border: 1px solid darkmagenta;
+    margin-left: 100px;
 }
