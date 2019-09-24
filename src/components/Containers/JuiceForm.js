@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 
 export default class JuiceForm extends Component {
-    state={
-        creator:"",
-        name:"",
-        imageURL: "",
-        ing: "",
-        directions: ""
+    constructor(props){
+        super(props)
+        this.state={
+            name:"",
+            imageURL: "",
+            user_id: 2,
+            creator:"",
+            ing: "",
+            directions: ""
+        }
     }
+    
 
-    handleSubmit= event => {
+    handleSubmit = event => {
         event.preventDefault()
+        this.props.addJuice(this.state)
         this.setState({
             creator:"",
             name:"",
@@ -18,7 +24,7 @@ export default class JuiceForm extends Component {
             ing: "",
             directions: ""
         })
-        this.props.addJuice(this.state)
+      
     }
 
     handleChange = event => {
@@ -29,38 +35,39 @@ export default class JuiceForm extends Component {
     }
 
     render(){
-        const{ creator, name, ing, imageURL, directions } = this.state
+        // const{ creator, name, ing, imageURL, directions } = this.state
+
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <input
                         placeholder="Created By"
                         name="creator"
-                        value={creator}
+                        value={this.state.creator}
                         onChange={this.handleChange}
                     />
                     <input
                         placeholder="Name"
                         name="name"
-                        value={name}
+                        value={this.state.name}
                         onChange={this.handleChange}
                     />
                     <input
                         placeholder="Ingredients"
                         name="ing"
-                        value={ing}
+                        value={this.state.ing}
                         onChange={this.handleChange}
                     />
                     <input
                         placeholder="directions"
                         name="directions"
-                        value={directions}
+                        value={this.state.directions}
                         onChange={this.handleChange}
                     />
                     <input
                         placeholder="image"
                         name="imageURL"
-                        value={imageURL}
+                        value={this.state.imageURL}
                         onChange={this.handleChange}
                     />
                     <button>Save Juice!</button>

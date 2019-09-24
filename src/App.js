@@ -17,19 +17,40 @@ export default class App extends Component {
     }))
   }
 
+
+  // addJuice = (name, imageURL, user_id, creator, ing, directions)  => {
+  //   const newJuice = {name, imageURL, user_id, creator, ing, directions}
+  //   const juiceList = [...this.state.juices, newJuice]
+  //   this.setState({
+  //     juices: {juiceList}
+  //   })
+
+  //   const body = {name:name, imageURL:imageURL, user_id:user_id, creator:creator, ing:ing, directions:directions}
+  //   fetch('http://localhost:3000/juices', {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type":"application/json"
+  //     },
+  //     body:JSON.stringify(body)
+  //   })
+  //   .catch(error => (console.log(error)))
+  // }
+  
   addJuice = (juice) => {
-    const newJuice = {userId: 1, ...juice}
-    this.setState({
-      juices: [newJuice, ...this.state.juices]
-    })
+    console.log('check', juice)
+    // const newJuice = { ...juice}
     fetch('http://localhost:3000/juices', {
       method: 'POST',
-      body: JSON.stringify(newJuice),
       headers: {
         'Content-Type':'application/json'
-      }
+      },
+      body: JSON.stringify(juice),
     })
-    console.log(newJuice)
+    // console.log(juice)
+    this.setState({
+      juices: [juice, ...this.state.juices]
+    })
+    
   }
 
   render() {
