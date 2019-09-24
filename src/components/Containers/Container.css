@@ -1,17 +1,19 @@
 .container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: row;
     align-items: flex-end;
 }
 
 nav {
    display: flex;
-   flex-flow: row wrap;
+   flex-flow: column wrap;
    padding: 25px;
-   justify-content: center;
-   background-color: hsla(49, 83%, 50%, 0.9)
+   justify-content: space-between;
+   align-items: center;
+   background-color: #e9c215e6;
+   
 }
 
 form input {
@@ -41,6 +43,7 @@ button:hover {
 #feature {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
     background-image: url("https://i.pinimg.com/originals/36/9c/b4/369cb4e49818cb7dd788a2c92ed06566.jpg");
     background-size: 100%;
     position: center;
@@ -54,7 +57,6 @@ button:hover {
     grid-template-columns: repeat(1, auto);
     column-gap: 10px;
     row-gap: 15px;
-    padding-left: 100px;
 }
 
 .card{
@@ -67,9 +69,22 @@ button:hover {
 
 .active-card{
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    align-self: flex-end;
+    align-items: center;
     background-color: darkmagenta;
-    border: 1px solid darkmagenta;
-    margin-left: 100px;
+    border: 1px solid #8b008b;
+    height: 750px;
+}
+
+.details{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.details img{
+    width: 100%;
+    padding-bottom: 10px;
 }
