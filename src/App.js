@@ -57,6 +57,7 @@ export default class App extends Component {
     return (
       <div>
       <nav>
+        <img className="logo" src="https://files.slack.com/files-pri/T02MD9XTF-FNPTQUWRW/picture1.png"></img>
         <JuiceForm addJuice={this.addJuice} />
 
       </nav>
