@@ -8,7 +8,7 @@ export default function Container({juices}) {
     const[activeCard, setActiveCard] = useState(null)
 
     return (
-        <div>
+        <div id="feature">
             <CardContainer juices={juices} setActiveCard={setActiveCard}/>
             {activeCard ? <Card juice={activeCard} activeCard={true} /> : null }
         </div>
